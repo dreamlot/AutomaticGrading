@@ -16,31 +16,35 @@ import filecmp
 
 
 def checkAll(sourcepath,assignmentname,logfile=None):
-	'''
-	1
-	'''
-	# get all folders
-	folders= [f for f in os.listdir(sourcepath) if not isfile(join(sourcepath, f))]
+    '''
+    1
+    '''
+    # get all folders
+    folders= [f for f in os.listdir(sourcepath) if not isfile(join(sourcepath, f))]
 
-	'''
-	2 3
-	'''
-	counter = 0
-	for ite1 in folders:
-		for ite2 in folders:
-			if ite1 != ite2:
-				file1 = sourcepath + '/' + ite1 + '/' + assignmentname
-				file2 = sourcepath + '/' + ite2 + '/' + assignmentname
-				if filecmp.cmp(file1, file2, shallow=True):
-					counter += 1
-					print(str(counter),ite1,', ',ite2)
-					if logfile:
-						f = open(logfile,'a')
-						f.write(str(counter)+'\n')
-						f.write(ite1+'\n')
-						f.write(ite2+'\n\n')
-						f.close()
-	return
+    '''
+    2 3
+    '''
+    counter = 0
+    for ite1 in folders:
+        print(ite1)
+        for ite2 in folders:
+            if ite1 != ite2:
+                file1 = sourcepath + '/' + ite1 + '/' + assignmentname;
+                file2 = sourcepath + '/' + ite2 + '/' + assignmentname;
+                try:
+                    if filecmp.cmp(file1, file2, shallow=True):
+                        counter += 1
+                        print(str(counter),ite1,', ',ite2)
+                        if logfile:
+                            f = open(logfile,'a')
+                            f.write(str(counter)+'\n')
+                            f.write(ite1+'\n')
+                            f.write(ite2+'\n\n')
+                            f.close()
+                except FileNotFoundError:
+                    pass
+    return
                 
 if __name__ == '__main__': 
 

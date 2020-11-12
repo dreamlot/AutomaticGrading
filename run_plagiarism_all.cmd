@@ -1,0 +1,2 @@
+
+python runPlagiarismCheck.py
