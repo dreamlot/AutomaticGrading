@@ -1,6 +1,0 @@
-1. a link on Canvas
-2. click the link to create a repository on github
-3. download the file
-4. use Jupyter Notebook to edit the file 
-5. test the file with the test.py file
-6. upload the Jupyter Notebook file
