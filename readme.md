@@ -1,6 +1,6 @@
 This program is created to automatically grade the Python assignments on Github Classroom. It works on a local computer to grade the downloaded assignments. It can also grade assignments stored in the same structure:
 
-This program is created for grading PGE 310 assignments.
+This program is created for grading PGE 310 assignments at the University of Texas at Austin.
 The assignments should be in the following structure:
 	Each student's submission should be in a single folder named after the student.
 	All these folders should be placed in the same directory.
